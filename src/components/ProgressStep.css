@@ -1,0 +1,88 @@
+.progress-step {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.progress-step.horizontal {
+  flex-direction: row;
+}
+
+.progress-step.vertical {
+  flex-direction: column;
+}
+
+.step {
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.step .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+}
+
+.step.current .circle {
+  background-color: transparent;
+  border: 2px solid lawngreen;
+  color: green;
+}
+
+.step.previous .circle {
+  background-color: lawngreen;
+}
+
+.step.next .circle {
+  background-color: lightgrey;
+}
+
+.step-info {
+  margin-left: 0;
+  font-weight: bold;
+}
+
+.description {
+  font-weight: 400;
+  margin-left: 10px;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+.connector {
+  position: absolute;
+  margin-top: 14px;
+  height: 3px;
+  width: 86%;
+}
+
+.step .connector.horizontal {
+  width: calc(100% - 30px);
+  height: 2px; /* Adjust the thickness of the connector line */
+  top: calc(50% - 1px);
+  left: 30px;
+  background-color: grey; /* Color of the connector line */
+}
+
+.step .connector.vertical {
+  width: 2px; /* Adjust the thickness of the connector line */
+  height: calc(100% - 30px);
+  top: 30px;
+  left: 50%;
+  transform: translateX(-1px);
+  background-color: grey; /* Color of the connector line */
+}
+
+.connector.success {
+  background-color: lawngreen;
+}
+
+.connector.failure {
+  background-color: grey;
+}
